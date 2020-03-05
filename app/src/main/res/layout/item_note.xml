@@ -7,13 +7,25 @@
     android:layout_height="wrap_content">
 
     <LinearLayout
+        android:background="#4BC0D9"
         android:padding="10dp"
-        android:orientation="vertical"
+        android:gravity="center"
+        android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <TextView
             android:id="@+id/tvNoteTitle"
+            android:text="Some text"
+            android:textSize="15sp"
+            android:layout_weight="1"
+            android:textColor="@android:color/white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <ImageView
+            android:id="@+id/ivEditNote"
+            android:src="@drawable/ic_edit_note"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 
