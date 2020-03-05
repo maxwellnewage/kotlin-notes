@@ -19,7 +19,6 @@
             android:text="Some text"
             android:textSize="15sp"
             android:layout_weight="1"
-            android:textColor="@android:color/white"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 

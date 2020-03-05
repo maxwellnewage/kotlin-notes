@@ -2,32 +2,29 @@ package com.maxwell.notesapp
 
 import android.app.SearchManager
 import android.content.Context
-import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.LinearLayout
 import android.widget.SearchView
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : AppCompatActivity() {
+
+class MainActivity : AppCompatActivity() , OnNoteListener {
+    var adapter:NoteAdapter? = null
+    var noteList:ArrayList<Note>? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val noteList = arrayListOf<Note>()
-
-        for(i in 1..5){
-            noteList.add(Note("testing a note $i"))
-        }
+        noteList = arrayListOf()
 
         rvNotes.layoutManager = LinearLayoutManager(this, RecyclerView.VERTICAL, false)
 
-        val adapter = NoteAdapter(noteList)
+        adapter = NoteAdapter(noteList!!)
 
         rvNotes.adapter = adapter
     }
@@ -37,7 +34,7 @@ class MainActivity : AppCompatActivity() {
         when(item.itemId){
 
             R.id.iAddNote -> {
-
+                AddNoteDialogFragment(MainActivity@this).show(supportFragmentManager, "")
             }
         }
 
@@ -68,5 +65,11 @@ class MainActivity : AppCompatActivity() {
 
     fun searchNote(term:String?){
 
+    }
+
+    override fun onNoteAdded(note: String) {
+        noteList?.add(0, Note(note))
+
+        adapter?.notifyDataSetChanged()
     }
 }
