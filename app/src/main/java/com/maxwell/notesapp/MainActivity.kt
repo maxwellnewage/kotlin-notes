@@ -54,11 +54,11 @@ class MainActivity : AppCompatActivity() , OnNoteListener {
 
         searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener{
             override fun onQueryTextSubmit(p0: String?): Boolean {
-                searchNote(p0)
                 return false
             }
 
             override fun onQueryTextChange(p0: String?): Boolean {
+                searchNote(p0)
                 return false
             }
         })
