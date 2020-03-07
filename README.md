@@ -3,8 +3,8 @@
 This is an example app developed with pure Kotlin where we can makes notes, modify and delete them.
 
 ## Captures
-<img src="https://drive.google.com/uc?export=view&id=16lnyqjqhygggunYJLOO8-yIOHIVG4wFp" width="300"/>
-<img src="https://drive.google.com/uc?export=view&id=1w212loIlD0r0RXGaXgx9YulTR_YWosU7" width="300"/>
+- [Home](https://drive.google.com/uc?export=view&id=16lnyqjqhygggunYJLOO8-yIOHIVG4wFp)
+- [Dialog Create Note](https://drive.google.com/uc?export=view&id=1w212loIlD0r0RXGaXgx9YulTR_YWosU7)
 
 ## Compatibility
 - minSdkVersion 16
