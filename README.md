@@ -2,6 +2,10 @@
 
 This is an example app developed with pure Kotlin where we can makes notes, modify and delete them.
 
+## Captures
+![](https://drive.google.com/uc?export=view&id=16lnyqjqhygggunYJLOO8-yIOHIVG4wFp)
+![](https://drive.google.com/uc?export=view&id=1w212loIlD0r0RXGaXgx9YulTR_YWosU7)
+
 ## Compatibility
 - minSdkVersion 16
 - compileSdkVersion 29
