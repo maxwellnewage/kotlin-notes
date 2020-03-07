@@ -15,12 +15,15 @@ import kotlinx.android.synthetic.main.activity_main.*
 class MainActivity : AppCompatActivity() , OnNoteListener {
     var adapter:NoteAdapter? = null
     var noteList:ArrayList<Note>? = null
+    var prefs:PreferencesManager? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        noteList = arrayListOf()
+        prefs = PreferencesManager(this)
+
+        noteList = prefs!!.getNotes()
 
         rvNotes.layoutManager = LinearLayoutManager(this, RecyclerView.VERTICAL, false)
 
@@ -75,6 +78,8 @@ class MainActivity : AppCompatActivity() , OnNoteListener {
 
     override fun onNoteAdded(note: String) {
         noteList?.add(0, Note(note))
+
+        prefs?.setNotes(noteList!!)
 
         adapter?.notifyDataSetChanged()
     }
