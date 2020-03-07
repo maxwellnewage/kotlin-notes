@@ -27,7 +27,7 @@ class MainActivity : AppCompatActivity() , OnNoteListener {
 
         rvNotes.layoutManager = LinearLayoutManager(this, RecyclerView.VERTICAL, false)
 
-        adapter = NoteAdapter(noteList!!)
+        adapter = NoteAdapter(noteList!!, this)
 
         rvNotes.adapter = adapter
     }
@@ -82,5 +82,23 @@ class MainActivity : AppCompatActivity() , OnNoteListener {
         prefs?.setNotes(noteList!!)
 
         adapter?.notifyDataSetChanged()
+    }
+
+    override fun onNoteDeleted(note: Note) {
+        noteList?.remove(note)
+
+        prefs?.setNotes(noteList!!)
+
+        adapter?.notifyDataSetChanged()
+    }
+
+    override fun onNoteModified() {
+        prefs?.setNotes(noteList!!)
+
+        adapter?.notifyDataSetChanged()
+    }
+
+    override fun onNoteSelected(note: Note) {
+        MDNoteDialogFragment(MainActivity@this, note).show(supportFragmentManager, "")
     }
 }

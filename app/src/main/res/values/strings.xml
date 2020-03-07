@@ -1,6 +1,9 @@
 <resources>
     <string name="app_name">Notes App</string>
     <string name="add_note_title">Add Note</string>
+    <string name="modify_delete_note_title">Modify/Delete Note</string>
+    <string name="modify_delete_note_bt_modify">Modify</string>
+    <string name="modify_delete_note_bt_delete">Delete</string>
     <string name="add_note_bt_accept">Add</string>
     <string name="add_note_bt_exit">Back</string>
     <string name="add_note_hint">Write content of the note...</string>
