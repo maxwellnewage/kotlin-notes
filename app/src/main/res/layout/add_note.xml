@@ -16,6 +16,9 @@
         android:id="@+id/etAddNote"
         android:layout_margin="5dp"
         android:backgroundTint="@android:color/white"
+        android:textColor="@android:color/white"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
