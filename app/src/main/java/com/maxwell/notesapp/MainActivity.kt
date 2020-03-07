@@ -65,6 +65,12 @@ class MainActivity : AppCompatActivity() , OnNoteListener {
 
     fun searchNote(term:String?){
 
+        val filteredList = noteList?.filter { note ->
+            note.title.contains(term!!)
+        }
+
+        adapter?.noteList = filteredList as ArrayList<Note>
+        adapter?.notifyDataSetChanged()
     }
 
     override fun onNoteAdded(note: String) {
