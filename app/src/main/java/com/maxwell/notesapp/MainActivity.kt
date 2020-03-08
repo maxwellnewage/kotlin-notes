@@ -2,9 +2,11 @@ package com.maxwell.notesapp
 
 import android.app.SearchManager
 import android.content.Context
+import android.content.DialogInterface
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
 import android.widget.SearchView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -13,7 +15,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 
 class MainActivity : AppCompatActivity() , OnNoteListener {
-    var adapter:NoteAdapter? = null
+    private var adapter:NoteAdapter? = null
     var noteList:ArrayList<Note>? = null
     var prefs:PreferencesManager? = null
 
@@ -30,6 +32,18 @@ class MainActivity : AppCompatActivity() , OnNoteListener {
         adapter = NoteAdapter(noteList!!, this)
 
         rvNotes.adapter = adapter
+
+        updateListStatus()
+    }
+
+    private fun updateListStatus(){
+        if(noteList!!.isEmpty()) {
+            rvNotes.visibility = View.GONE
+            llEmptyNoteListContainer.visibility = View.VISIBLE
+        } else {
+            rvNotes.visibility = View.VISIBLE
+            llEmptyNoteListContainer.visibility = View.GONE
+        }
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
@@ -82,6 +96,8 @@ class MainActivity : AppCompatActivity() , OnNoteListener {
         prefs?.setNotes(noteList!!)
 
         adapter?.notifyDataSetChanged()
+
+        updateListStatus()
     }
 
     override fun onNoteDeleted(note: Note) {
@@ -90,12 +106,16 @@ class MainActivity : AppCompatActivity() , OnNoteListener {
         prefs?.setNotes(noteList!!)
 
         adapter?.notifyDataSetChanged()
+
+        updateListStatus()
     }
 
     override fun onNoteModified() {
         prefs?.setNotes(noteList!!)
 
         adapter?.notifyDataSetChanged()
+
+        updateListStatus()
     }
 
     override fun onNoteSelected(note: Note) {

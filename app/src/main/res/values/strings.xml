@@ -6,5 +6,6 @@
     <string name="modify_delete_note_bt_delete">Delete</string>
     <string name="add_note_bt_accept">Add</string>
     <string name="add_note_bt_exit">Back</string>
-    <string name="add_note_hint">Write content of the note...</string>
+    <string name="add_note_hint">Write content of the note</string>
+    <string name="empty_list_notes">You don\'t have a note.\n\nCreate one from the plus button on the bar.</string>
 </resources>
