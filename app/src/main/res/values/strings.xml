@@ -8,4 +8,5 @@
     <string name="add_note_bt_exit">Back</string>
     <string name="add_note_hint">Write content of the note</string>
     <string name="empty_list_notes">You don\'t have a note.\n\nCreate one from the plus button on the bar.</string>
+    <string name="share_note_title">Read this note!</string>
 </resources>

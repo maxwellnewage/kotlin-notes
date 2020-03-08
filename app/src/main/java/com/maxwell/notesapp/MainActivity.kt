@@ -1,7 +1,9 @@
 package com.maxwell.notesapp
 
+import android.R
 import android.app.SearchManager
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
@@ -130,5 +132,18 @@ class MainActivity : AppCompatActivity() , OnNoteListener {
             MainActivity@ this,
             note
         ).show(supportFragmentManager, "")
+    }
+
+    override fun onNoteShared(note: Note) {
+        val sharingIntent = Intent(Intent.ACTION_SEND)
+        sharingIntent.type = "text/plain"
+        sharingIntent.putExtra(Intent.EXTRA_SUBJECT, resources.getString(R.string.share_note_title))
+        sharingIntent.putExtra(Intent.EXTRA_TEXT, note.title)
+        startActivity(
+            Intent.createChooser(
+                sharingIntent,
+                resources.getString(R.string.share_note_title)
+            )
+        )
     }
 }

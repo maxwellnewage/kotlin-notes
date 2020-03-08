@@ -1,4 +1,4 @@
-# Note App v0.14
+# Note App v0.20
 
 This is an example app developed with pure Kotlin where we can makes notes, modify and delete them.
 
@@ -14,6 +14,8 @@ This is an example app developed with pure Kotlin where we can makes notes, modi
 ## Components
 - RecyclerView with CardView for list
 - Gson for saving Note object on SharedPreferences
+- Swipe to Delete with ItemTouchHelper
+- Share with Intent Chooser
 
 ## How to run
 Just clone (or fork) the project and build on Android Studio. (Developed and Tested on version 3.5)

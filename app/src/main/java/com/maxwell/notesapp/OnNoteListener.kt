@@ -5,4 +5,5 @@ interface OnNoteListener {
     fun onNoteDeleted(note:Note)
     fun onNoteModified()
     fun onNoteSelected(note:Note)
+    fun onNoteShared(note:Note)
 }

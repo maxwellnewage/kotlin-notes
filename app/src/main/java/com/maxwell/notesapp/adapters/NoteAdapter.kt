@@ -23,9 +23,12 @@ class NoteAdapter(var noteList : ArrayList<Note>, val onNoteListener: OnNoteList
     override fun onBindViewHolder(holder: NoteVH, position: Int) {
         holder.bindItems(noteList[position])
 
-        // I'm not sure if this is a good practice...
-        holder.itemView.setOnClickListener {
+        holder.tvNoteTitle?.setOnClickListener {
             onNoteListener.onNoteSelected(noteList[position])
+        }
+
+        holder.ivShare?.setOnClickListener {
+            onNoteListener.onNoteShared(noteList[position])
         }
     }
 
