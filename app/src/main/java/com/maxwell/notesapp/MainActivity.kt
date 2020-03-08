@@ -1,6 +1,5 @@
 package com.maxwell.notesapp
 
-import android.R
 import android.app.SearchManager
 import android.content.Context
 import android.content.Intent
@@ -59,7 +58,7 @@ class MainActivity : AppCompatActivity() , OnNoteListener {
         when(item.itemId){
 
             R.id.iAddNote -> {
-                AddNoteDialogFragment(MainActivity@ this)
+                AddNoteDialogFragment(MainActivity@this)
                     .show(supportFragmentManager, "")
             }
         }
@@ -129,7 +128,7 @@ class MainActivity : AppCompatActivity() , OnNoteListener {
 
     override fun onNoteSelected(note: Note) {
         MDNoteDialogFragment(
-            MainActivity@ this,
+            MainActivity@this,
             note
         ).show(supportFragmentManager, "")
     }
