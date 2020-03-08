@@ -1,8 +1,12 @@
-package com.maxwell.notesapp
+package com.maxwell.notesapp.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.maxwell.notesapp.Note
+import com.maxwell.notesapp.NoteVH
+import com.maxwell.notesapp.OnNoteListener
+import com.maxwell.notesapp.R
 
 class NoteAdapter(var noteList : ArrayList<Note>, val onNoteListener: OnNoteListener) : RecyclerView.Adapter<NoteVH>() {
 

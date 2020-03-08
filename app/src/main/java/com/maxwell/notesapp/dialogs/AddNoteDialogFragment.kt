@@ -1,4 +1,4 @@
-package com.maxwell.notesapp
+package com.maxwell.notesapp.dialogs
 
 import android.app.AlertDialog
 import android.app.Dialog
@@ -6,6 +6,8 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import androidx.fragment.app.DialogFragment
+import com.maxwell.notesapp.OnNoteListener
+import com.maxwell.notesapp.R
 import kotlinx.android.synthetic.main.add_note.view.*
 
 class AddNoteDialogFragment(val onNoteListener: OnNoteListener) : DialogFragment() {

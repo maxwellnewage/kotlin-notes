@@ -1,4 +1,4 @@
-package com.maxwell.notesapp
+package com.maxwell.notesapp.dialogs
 
 import android.app.AlertDialog
 import android.app.Dialog
@@ -6,7 +6,9 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import androidx.fragment.app.DialogFragment
-import kotlinx.android.synthetic.main.modify_delete_note.*
+import com.maxwell.notesapp.Note
+import com.maxwell.notesapp.OnNoteListener
+import com.maxwell.notesapp.R
 import kotlinx.android.synthetic.main.modify_delete_note.view.*
 
 class MDNoteDialogFragment(val onNoteListener: OnNoteListener, val note: Note) : DialogFragment() {

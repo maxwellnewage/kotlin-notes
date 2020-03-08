@@ -2,20 +2,24 @@ package com.maxwell.notesapp
 
 import android.app.SearchManager
 import android.content.Context
-import android.content.DialogInterface
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.widget.SearchView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.maxwell.notesapp.adapters.DragManageAdapter
+import com.maxwell.notesapp.adapters.NoteAdapter
+import com.maxwell.notesapp.dialogs.AddNoteDialogFragment
+import com.maxwell.notesapp.dialogs.MDNoteDialogFragment
 import kotlinx.android.synthetic.main.activity_main.*
 
 
 class MainActivity : AppCompatActivity() , OnNoteListener {
-    private var adapter:NoteAdapter? = null
+    private var adapter: NoteAdapter? = null
     var noteList:ArrayList<Note>? = null
     var prefs:PreferencesManager? = null
 
@@ -33,10 +37,12 @@ class MainActivity : AppCompatActivity() , OnNoteListener {
 
         rvNotes.adapter = adapter
 
+        ItemTouchHelper(DragManageAdapter(this, noteList!!)).attachToRecyclerView(rvNotes)
+
         updateListStatus()
     }
 
-    private fun updateListStatus(){
+    fun updateListStatus(){
         if(noteList!!.isEmpty()) {
             rvNotes.visibility = View.GONE
             llEmptyNoteListContainer.visibility = View.VISIBLE
@@ -51,7 +57,8 @@ class MainActivity : AppCompatActivity() , OnNoteListener {
         when(item.itemId){
 
             R.id.iAddNote -> {
-                AddNoteDialogFragment(MainActivity@this).show(supportFragmentManager, "")
+                AddNoteDialogFragment(MainActivity@ this)
+                    .show(supportFragmentManager, "")
             }
         }
 
@@ -119,6 +126,9 @@ class MainActivity : AppCompatActivity() , OnNoteListener {
     }
 
     override fun onNoteSelected(note: Note) {
-        MDNoteDialogFragment(MainActivity@this, note).show(supportFragmentManager, "")
+        MDNoteDialogFragment(
+            MainActivity@ this,
+            note
+        ).show(supportFragmentManager, "")
     }
 }
