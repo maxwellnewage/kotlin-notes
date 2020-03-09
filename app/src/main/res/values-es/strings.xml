@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="add_note_bt_accept">Agregar</string>
+    <string name="add_note_bt_exit">Atrás</string>
+    <string name="add_note_hint">Escribe el contenido de la nota</string>
+    <string name="add_note_title">Agregar Nota</string>
+    <string name="empty_list_notes">No tienes notas.\n\nCrea una desde el botón más de la barra superior.</string>
+    <string name="modify_delete_note_bt_delete">Borrar</string>
+    <string name="modify_delete_note_bt_modify">Modificar</string>
+    <string name="modify_delete_note_title">Modificar/Borrar Nota</string>
+    <string name="share_note_title">Lee esta nota!</string>
+</resources>

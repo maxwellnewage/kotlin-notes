@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Notes App</string>
+    <string name="app_name" translatable="false">Notes App</string>
     <string name="add_note_title">Add Note</string>
     <string name="modify_delete_note_title">Modify/Delete Note</string>
     <string name="modify_delete_note_bt_modify">Modify</string>
