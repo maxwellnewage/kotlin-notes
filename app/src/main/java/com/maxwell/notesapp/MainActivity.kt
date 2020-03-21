@@ -38,7 +38,7 @@ class MainActivity : AppCompatActivity() , OnNoteListener {
 
         rvNotes.adapter = adapter
 
-        ItemTouchHelper(DragManageAdapter(this, noteList!!)).attachToRecyclerView(rvNotes)
+        ItemTouchHelper(DragManageAdapter(this, this, noteList!!)).attachToRecyclerView(rvNotes)
 
         updateListStatus()
     }
@@ -58,7 +58,7 @@ class MainActivity : AppCompatActivity() , OnNoteListener {
         when(item.itemId){
 
             R.id.iAddNote -> {
-                AddNoteDialogFragment(MainActivity@this)
+                AddNoteDialogFragment(this)
                     .show(supportFragmentManager, "")
             }
         }
